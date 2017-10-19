@@ -94,6 +94,11 @@ type variableProperties struct {
 		Pdk struct {
 			Enabled *bool
 		}
+
+		// useSwOpengl is true when there's no GPU 3D on the chip.
+		UseSwOpengl struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -162,6 +167,8 @@ type productVariables struct {
 	BtConfigIncludeDir *string `json:",omitempty"`
 
 	Override_rs_driver *string `json:",omitempty"`
+
+	UseSwOpengl *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
