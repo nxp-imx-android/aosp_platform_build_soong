@@ -108,6 +108,11 @@ type variableProperties struct {
 		Chipsmedia_vpu struct {
 			Cflags []string
 		}
+
+		// imx6dq_soc is true when BOARD_SOC_TYPE=IMX6DQ
+		Imx6dq_soc struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -186,6 +191,8 @@ type productVariables struct {
 
 	Hantro_vpu     *bool `json:",omitempty"`
 	Chipsmedia_vpu *bool `json:",omitempty"`
+
+	Imx6dq_soc     *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
