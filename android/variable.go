@@ -99,6 +99,15 @@ type variableProperties struct {
 		UseSwOpengl struct {
 			Cflags []string
 		}
+
+		// hantro_vpu is true when BOARD_VPU_TYPE=hantro
+		Hantro_vpu struct {
+			Cflags []string
+		}
+		// chipsmedia_vpu is true when BOARD_VPU_TYPE=chipsmedia
+		Chipsmedia_vpu struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -169,6 +178,9 @@ type productVariables struct {
 	Override_rs_driver *string `json:",omitempty"`
 
 	UseSwOpengl *bool `json:",omitempty"`
+
+	Hantro_vpu     *bool `json:",omitempty"`
+	Chipsmedia_vpu *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
