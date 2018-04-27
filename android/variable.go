@@ -108,6 +108,10 @@ type variableProperties struct {
 		Chipsmedia_vpu struct {
 			Cflags []string
 		}
+		// malone_vpu is true when BOARD_VPU_TYPE=malone
+		Malone_vpu struct {
+			Cflags []string
+		}
 
 		// imx6dq_soc is true when BOARD_SOC_TYPE=IMX6DQ
 		Imx6dq_soc struct {
@@ -191,6 +195,7 @@ type productVariables struct {
 
 	Hantro_vpu     *bool `json:",omitempty"`
 	Chipsmedia_vpu *bool `json:",omitempty"`
+	Malone_vpu     *bool `json:",omitempty"`
 
 	Imx6dq_soc     *bool `json:",omitempty"`
 }
