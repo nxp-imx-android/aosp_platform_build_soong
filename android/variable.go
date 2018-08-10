@@ -114,6 +114,31 @@ type variableProperties struct {
 			Static_libs  []string
 			Srcs         []string
 		}
+
+		// useSwOpengl is true when there's no GPU 3D on the chip.
+		UseSwOpengl struct {
+			Cflags []string
+		}
+
+		// hantro_vpu is true when BOARD_VPU_TYPE=hantro
+		Hantro_vpu struct {
+			Cflags []string
+		}
+
+		// chipsmedia_vpu is true when BOARD_VPU_TYPE=chipsmedia
+		Chipsmedia_vpu struct {
+			Cflags []string
+		}
+
+		// malone_vpu is true when BOARD_VPU_TYPE=malone
+		Malone_vpu struct {
+			Cflags []string
+		}
+
+		// imx6dq_soc is true when BOARD_SOC_TYPE=IMX6DQ
+		Imx6dq_soc struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -230,6 +255,12 @@ type productVariables struct {
 	PgoAdditionalProfileDirs []string `json:",omitempty"`
 
 	VendorVars map[string]map[string]string `json:",omitempty"`
+
+	UseSwOpengl *bool `json:",omitempty"`
+	Hantro_vpu     *bool `json:",omitempty"`
+	Chipsmedia_vpu *bool `json:",omitempty"`
+	Malone_vpu     *bool `json:",omitempty"`
+	Imx6dq_soc     *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
