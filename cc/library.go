@@ -635,7 +635,7 @@ func (library *libraryDecorator) linkShared(ctx ModuleContext,
 	objs.sAbiDumpFiles = append(objs.sAbiDumpFiles, deps.WholeStaticLibObjs.sAbiDumpFiles...)
 
 	library.coverageOutputFile = TransformCoverageFilesToLib(ctx, objs, builderFlags, library.getLibName(ctx))
-	//library.linkSAbiDumpFiles(ctx, objs, fileName, ret)
+	library.linkSAbiDumpFiles(ctx, objs, fileName, ret)
 
 	return ret
 }
